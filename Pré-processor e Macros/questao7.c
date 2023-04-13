@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define is_digit(x) (((x) >= '0') && ((x) <= '9') ? "TRUE" : "FALSE")
+#define is_digit(x) (((x) >= 0) && ((x) <= 9) ? "TRUE" : "FALSE")
 
 int main() {
     char digito;
