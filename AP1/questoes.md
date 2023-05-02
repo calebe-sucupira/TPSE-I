@@ -1,7 +1,7 @@
 # 1° Avaliação parcial
 
 ### 01)Explique com suas palavras o processo de desenvolvimento (construção, ambiente e gravação) de um sistema embarcado, conforme mostrado no diagrama de blocos da figura abaixo:
-![preview](./assets/build.png)
+![preview](/assets/build.png)
 
 R:  Que os codigos em c, assembly e c++ são transformados em objeto pelo compilador, e o linker ele vincula os arquivos objeto que foi gerado pelo compilador para gerar um arquivo executável, isso seria o processo de construção e ambiente. Na parte de gravação de (host -> embedded system) é quando utiliza um notebook ou desktop para se comunicar com o sistema embarcado, por meio de uma cabo serial ou outros tipos conexão. No de (host ->  simulator(running on the host)), é quando o código é executado em um ambiente virtual, sem a necessidade de um sistema embarcado físico e no de (host -> in-circuit emulator) onde o in-circuit-emulator é conectado ao sistema embarcado para testa o codigo do sistema embarcado em tempo real.
 
