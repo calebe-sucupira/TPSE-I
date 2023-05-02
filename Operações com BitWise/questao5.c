@@ -1,22 +1,28 @@
 #include <stdio.h>
+#include <stdbool.h>
 
-int countBits(int number) {
+int countBits(bool w,unsigned int value) {
     int count = 0;
-
-    while (number > 0) {
-        if(number & 1) 
-            count++;
+    if(w) {
+        while (value > 0) {
+            if(value & 1) 
+                count++;
         
-        number >>= 1;
+            value >>= 1;
+        }
+    }
+    else {
+        
     }
     return count;
 }
 
 int main() {
-    int number = 0;
-    printf("Digite um numero: ");
-    scanf("%d", &number);
-    printf("O numero %d possui %d bit(s) definidos.\n",number, countBits(number));
+    unsigned int value = 0;
+    int w;
+    scanf("%d %d", &w, &value);
+    bool w_bool = (bool) w;
+    printf("%d", countBits(w_bool, value));
 
     return 0;
 }

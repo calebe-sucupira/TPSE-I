@@ -1,7 +1,9 @@
 #include <stdio.h>
+#define MASK_FULL_BIT 0xFF
+#define MASK_SIGNIFICANT_BIT 0x80
 
 void printBit(unsigned int number){
-    for(int i = 0x80; i != 0; i >>= 1) {
+    for(int i = MASK_SIGNIFICANT_BIT; i != 0; i >>= 1) {
         if((number & i) != 0)
             printf("1");
         else
@@ -10,8 +12,8 @@ void printBit(unsigned int number){
 }
 
 int movBitsLeft(unsigned int number) {
-    int leftBits = 0xFF;
-	for(int i = 0x80; i != 0; i >>= 1) {
+    int leftBits = MASK_FULL_BIT;
+	for(int i = MASK_SIGNIFICANT_BIT; i != 0; i >>= 1) {
 		if((number & i) == 0)
             leftBits <<= 1;
 	}
@@ -19,16 +21,10 @@ int movBitsLeft(unsigned int number) {
 }
 
 int main() {
-
 	unsigned int number = 0;
-    printf("Digite um numero: ");
     scanf("%d", &number);
-    printf("O numero em binario eh: ");
-    printBit(number);
-	printf("\nAgora o numero eh: ");
     printBit(movBitsLeft(number));
-    printf("\n");
 
-	return(0);
+	return 0;
 }
 
