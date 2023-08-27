@@ -1,0 +1,7 @@
+set ipaddr 10.4.1.2
+set serverip 10.4.1.1
+tftpboot 0x800000 10.4.1.1:appTimer.bin
+set app "set ipaddr 10.4.1.2; set serverip 10.4.1.1; tftp 0x80000000 appTimer.bin;go 0x80000000"
+
+
+setenv app "setenv ipaddr 10.4.1.2; setenv serverip 10.4.1.1; tftp 0x80000000 startup.bin;go 0x80000000"
